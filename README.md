@@ -3,7 +3,7 @@
 
 学习《DOM启蒙》受到一些启发，一点点学习弄出来的东西。
 
-由于使用了querySelector，所有只支持IE8+。
+由于使用了querySelector，所有只支持IE8+。  
 现在只有选择器和each(),text(),html(),append()四个方法，用法和jq类似。
 
 ## 使用示例：
