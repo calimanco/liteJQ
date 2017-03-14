@@ -8,9 +8,10 @@
 
 ## 使用示例：
 ```
-$('a')   //选择所有a标签的dom节点
-$('.head')   //选择所有head类的dom节点
-$('#foot')    //选择所有id是foot的dom节点
+$('a')                //选择所有a标签的dom节点
+$('.head')            //选择所有head类的dom节点
+$('#foot')            //选择所有id是foot的dom节点
+$('<div>123</div>')   //如果输入的是带html标签的字符串，则会转换为dom返回
 
 //遍历节点
 $('a').each(function(){

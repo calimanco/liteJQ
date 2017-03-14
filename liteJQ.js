@@ -36,24 +36,24 @@
       return this;
     }
     // 如果是HTML字符串,构造文档片段，填好对象，然后返回
-    // if (typeof params === 'string' && regXContainsTag.test(params)) {
-    //   // 创建div和文档片段，附加div到文档片段，将div的innerHTML设成该字符串
-    //   var divElm = currentContext.createElement('div');
-    //   // divElm.className = 'hippo-doc-frag-wrapper';
-    //   var docFrag = currentContext.createDocumentFragment();
-    //   docFrag.appendChild(divElm);
-    //   // var queryDiv = docFrag.querySelector('div');
-    //   docFrag.innerHTML = params;
-    //   var numberOfChildren = docFrag.children.length;
-    //   // 遍历节点列表并填充对象，因为HTML字符串可能含有多个兄弟节点
-    //   for (var z = 0; z < numberOfChildren; z++) {
-    //     this[z] = docFrag.children[z];
-    //   }
-    //   // 设置对象的length
-    //   this.length = numberOfChildren;
-    //   // 返回object
-    //   return this;
-    // }
+    if (typeof params === 'string' && regXContainsTag.test(params)) {
+      // 创建div和文档片段，附加div到文档片段，将div的innerHTML设成该字符串
+      var divElm = currentContext.createElement('div');
+      // divElm.className = 'hippo-doc-frag-wrapper';
+      var docFrag = currentContext.createDocumentFragment();
+      docFrag.appendChild(divElm);
+      // var queryDiv = docFrag.querySelector('div');
+      docFrag.innerHTML = params;
+      var numberOfChildren = docFrag.children.length;
+      // 遍历节点列表并填充对象，因为HTML字符串可能含有多个兄弟节点
+      for (var z = 0; z < numberOfChildren; z++) {
+        this[z] = docFrag.children[z];
+      }
+      // 设置对象的length
+      this.length = numberOfChildren;
+      // 返回object
+      return this;
+    }
     // 如果传入的单个节点引用，填好对象，返回
     if (typeof params === 'object' && params.nodeName) {
       this.length = 1;
